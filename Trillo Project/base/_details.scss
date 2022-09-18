@@ -1,0 +1,132 @@
+.detail{
+    display: flex;
+    padding: 4.5rem;
+    background-color: var(--color-grey-light-1);
+    border-bottom: var(--line);
+    font-size: 1.4rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        flex-direction: column;
+    }
+
+}
+
+.description{
+    background-color: #fff;
+    box-shadow: var(--shadow-light);
+    flex: 0 0 60%;
+    padding: 3rem;
+    margin-right: 4rem;
+
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-right: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        margin-right: 0;
+        margin-bottom: 3rem;
+    }
+
+}
+
+.user-review{
+    flex: 1;
+                                
+    display: flex;                                 // This property is used to align the bottom btn in the center
+    flex-direction: column;
+    align-items: center;
+} 
+
+///////////////////////////////////////////////
+//  Paragraph
+.paragraph:not(:last-of-type){
+    margin-bottom: 2rem;
+}
+
+
+
+
+///////////////////////////////////////////////
+//  List
+
+.list{
+    list-style: none;
+    margin: 3rem 0 ;
+    padding: 3rem 0 ;
+    border-top: var(--line);
+    border-bottom: var(--line);
+    
+    display: flex;
+    flex-wrap: wrap;
+
+    &-item{
+        width: 50%;
+        margin-bottom: .7rem;
+    }
+
+    &-item::before{
+        content: "";
+        display: inline-block;
+        height: 1rem;
+        width: 1rem;
+        margin-right: .7rem;
+
+
+        background-image:url(../img/SVG/chevron-right.svg) ;
+        background-size: cover;
+
+// A new method for set background img in which you can also change the img color --(Mask property)--
+
+    //    @supports ( -webkit-mask-image: url()) or (mask-image:url()){
+
+    //     background-color: var(--color-primary);
+    //     -webkit-mask-image: url(../img/chevron-right.svg); 
+    //     -webkit-mask-size: cover;
+    //     mask-image: url(../img/chevron-right.svg);
+    //     mask-size: cover;
+    //     background-image: none;
+    
+    //    }
+
+        
+
+    }
+
+}
+
+
+///////////////////////////////////////////////
+//  Recommend
+
+.recommend{
+    font-size: 1.3rem;
+    color: var(--color-grey-dark-3);
+    display: flex;
+    align-items: center;
+
+    &-count{
+        margin-right: auto;
+    }
+
+    &-friends{
+        display: flex;
+    }
+
+    &-photo{
+        box-sizing: content-box;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        border: 3px solid #fff;
+
+        &:not(:last-child){
+            margin-right: -2rem;
+        }
+    }
+}
